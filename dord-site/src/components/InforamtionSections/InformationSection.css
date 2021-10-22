@@ -1,0 +1,41 @@
+
+.huge-title-h1{
+    padding-top: 20%;
+    color: rgb(250, 250, 250);
+}
+
+.middle-title-h1{
+    color: #A3AD62;
+}
+
+.container {
+    display: flex;
+}
+
+.container__half {
+    flex: 1;
+}
+
+.image-container{
+    -webkit-filter: drop-shadow( 10px 10px 7px #000000b3);
+    filter: drop-shadow( 10px 10px 7px rgba(0, 0, 0, .7));
+    width: 75%; align-content: center; margin: 1vw;}
+
+.text-session{
+    color: rgb(250, 250, 250);
+    font-size: 70%;
+}
+.text-session span{
+    color: #A3AB62;
+}
+
+.contact-element{
+    color: rgb(250, 250, 250);
+}
+
+li{
+    list-style-image: linear-gradient(#A2AA60 50%, #A2AA60 50%);
+    border-radius: 5px;
+    padding: 7px 20px;
+    font-size: 75%;
+}
