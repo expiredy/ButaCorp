@@ -3,7 +3,8 @@ import SmokeThing from "./../../content/images/text_view/SmokeThing.png";
 
 
 function ProblematicSection(){
-    return (<div id="problem" className="container">
+    return (
+    <div id="problem" className="container">
         <div className="container__half">
             <h1 className="huge-title-h1">Проблематика</h1>
             <h3 className="text-session"><span>Бутанол</span> это химическое сырье, применяемое во многих промышленных отраслях, например в химической,

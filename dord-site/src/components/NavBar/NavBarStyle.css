@@ -44,10 +44,45 @@ nav{
     font-size: 16px;
 }
 
+.hamburger-logo{
+    display: none;
+}
+
 
 @media screen and (max-width:900px) {
     .navigation-links{
-        position: fixed;
+        background: #273037;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 180px;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        transition: .5s ease-in-out;
+      
     }
+    .navigation-links a {
+        color: white;
+        text-align: left;
+        padding: 12px 15px;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+      .navigation-links li:last-child a { border-bottom: none; }
+      .navigation-links > li:hover .navigation-links {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    .hamburger-logo{
+        display:flex;
+        position: relative;
+        justify-content: flex-end;
+    }
+    .hamburger-logo:after {
+        content: "\f107";
+        font-family: "FontAwesome";
+        color: inherit;
+      }
     
 }
