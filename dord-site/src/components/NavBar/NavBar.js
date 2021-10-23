@@ -1,5 +1,5 @@
 import "./NavBarStyle.css"
-import ButaCorpLogo from "./../../precockl/images/text_view/ButaCorpLogo.png"
+import ButaCorpLogo from "./../../content/images/text_view/ButaCorpLogo.png"
 
 
 function NavBar() {

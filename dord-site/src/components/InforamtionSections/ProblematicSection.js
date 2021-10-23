@@ -1,5 +1,5 @@
 import "./InformationSection.css";
-import SmokeThing from "./../../precockl/images/text_view/SmokeThing.png";
+import SmokeThing from "./../../content/images/text_view/SmokeThing.png";
 
 
 function ProblematicSection(){

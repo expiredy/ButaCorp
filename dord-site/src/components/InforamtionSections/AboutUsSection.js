@@ -1,5 +1,5 @@
 import "./InformationSection.css";
-import ConesGroup from "./../../precockl/images/text_view/ConesGroup.png";
+import ConesGroup from "./../../content/images/text_view/ConesGroup.png";
 
 function InformationSection(){
     return(<div id="about" class="container">
