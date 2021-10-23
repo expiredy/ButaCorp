@@ -1,6 +1,7 @@
 import './App.css';
-import AboutUsSection from '../InforamtionSections/AboutUsSection';
-import ProblematicSection from '../InforamtionSections/ProblematicSection';
+import AboutUsSection from './../InformationSections/AboutUsSection';
+import ProblematicSection from './../InformationSections/ProblematicSection';
+import ContactsSection from './../InformationSections/ContactsSection';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header className="App-header">
           <AboutUsSection />
           <ProblematicSection />
+          <ContactsSection />
       </header>
     </div>
   );

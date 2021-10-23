@@ -1,6 +1,5 @@
 
 .huge-title-h1{
-    padding-top: 20%;
     color: rgb(250, 250, 250);
 }
 
@@ -9,6 +8,9 @@
 }
 
 .container {
+    padding-top: 10vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
     display: flex;
 }
 
@@ -21,21 +23,27 @@
     filter: drop-shadow( 10px 10px 7px rgba(0, 0, 0, .7));
     width: 75%; align-content: center; margin: 1vw;}
 
+.contact-element{
+    color: rgb(250, 250, 250);
+}
+
 .text-session{
     color: rgb(250, 250, 250);
+    text-align: left;
     font-size: 70%;
 }
 .text-session span{
     color: #A3AB62;
 }
 
-.contact-element{
-    color: rgb(250, 250, 250);
-}
-
-li{
+.text-session li{
     list-style-image: linear-gradient(#A2AA60 50%, #A2AA60 50%);
     border-radius: 5px;
-    padding: 7px 20px;
-    font-size: 75%;
+    font-size: 100%;
+}
+
+
+
+.contact-element a{
+    color: rgb(250, 250, 250);    
 }
