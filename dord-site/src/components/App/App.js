@@ -1,7 +1,8 @@
 import './App.css';
-import AboutUsSection from './../InformationSections/AboutUsSection';
-import ProblematicSection from './../InformationSections/ProblematicSection';
-import ContactsSection from './../InformationSections/ContactsSection';
+import AboutUsSection from '../information-sections/AboutUsSection';
+import ProblematicSection from '../information-sections/ProblematicSection';
+import ContactsSection from '../information-sections/ContactsSection';
+import MarketOverviewSection from '../information-sections/MarketOverviewSection';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <header className="App-header">
           <AboutUsSection />
           <ProblematicSection />
+          <MarketOverviewSection />
           <ContactsSection />
       </header>
     </div>

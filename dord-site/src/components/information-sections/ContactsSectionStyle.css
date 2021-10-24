@@ -1,0 +1,12 @@
+.contact-list{
+    list-style-type: none;
+}
+
+.contact-list li{
+
+}
+
+.contact-container{ 
+    position: flex;
+    display: inline-block;
+}
