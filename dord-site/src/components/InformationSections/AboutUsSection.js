@@ -4,8 +4,8 @@ import ConesGroup from "./../../content/images/text_view/ConesGroup.png";
 function InformationSection(){
     return(
     <div id="about" class="container">
-    <div class="container__half">
-        <img src={ConesGroup} class="image-container" alt="ConesGroup"></img>
+    <div className="container__half">
+        <img src={ConesGroup} className="image-container" alt="ConesGroup"></img>
     </div>
     <div class="container__half">
         <h1 class="huge-title-h1">Про нас</h1>

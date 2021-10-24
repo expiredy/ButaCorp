@@ -1,4 +1,5 @@
 import "./InformationSection.css";
+import "./ContactsSectionStyle.css";
 
 import mail_logo from "./../../content/images/contacts/mail_logo.png";
 import vk_logo from "./../../content/images/contacts/vk_logo.png";
@@ -34,9 +35,9 @@ function ContactsSection(){
             </div>
         </div>
         <div class="container__half">
-            <img src={RoadToNowhere} alt="Road"></img>
+            <img src={RoadToNowhere} className="image-container" alt="Road"></img>
         </div>
-    </div>
+        </div>
     )
 }
 
