@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/nav-bar/NavBar';
 
 ReactDOM.render(
   <React.StrictMode>

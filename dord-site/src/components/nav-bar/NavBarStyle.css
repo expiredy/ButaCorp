@@ -1,0 +1,92 @@
+nav{
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 100;
+    background-color: rgb(255,255,255);
+}
+
+.navigation-bar-spacer{
+    height: 5vh;
+}
+
+.logo{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    margin-top: 0.25%;
+    margin-left: 0.5%;
+}
+
+.shadow {
+    padding-bottom: 10px;
+    -webkit-filter: drop-shadow( 10px 10px 7px #000000b3);
+    filter: drop-shadow( 10px 25px 15px rgba(0, 0, 0, .7));
+   }
+
+.navigation-links{
+    display: flex;
+    list-style-type: none;
+    width: 50%;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+
+.navigation-links li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hamburger-logo{
+    display: none;
+}
+
+
+@media screen and (max-width:900px) {
+    .hamburger-logo{
+        display:flex;
+        position: relative;
+        justify-content: flex-end;
+    }
+    .line-link {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+      }
+      
+      .hamburger-nav-bar {
+        position: absolute;
+        cursor: pointer;
+        right: 0.5%;
+        top: 50%;
+        transform: translate(0, -20%);
+        z-index: 100001;
+      }
+      
+      .navigation-links {
+        position: fixed;
+        background: #A2AA60;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 100% -30%);
+        -webkit-clip-path: circle(50px at 95% 0%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+        z-index: 10000;
+      }
+      .navigation-links:hover{
+            clip-path: circle(1000px at 100% -30%);
+            -webkit-clip-path: circle(1000px at 95% 0%);
+            z-index: 10002;
+            pointer-events: all;
+      }
+}
