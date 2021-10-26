@@ -1,0 +1,17 @@
+.chart-container{
+    list-style-type: none;
+}
+
+.chart-column{
+    display: inline-block;
+    margin-right: 2%;
+    width: 20%;
+}
+
+.chart-underline{
+    color: #A3AC63;
+}
+
+.information-chart-container ul{
+    text-align: left;
+}
