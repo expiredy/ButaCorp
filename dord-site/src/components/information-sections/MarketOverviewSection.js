@@ -1,67 +1,35 @@
 import "./InformationSection.css";
 import "./MarketChartStyle.css";
 
-const regionStructure = {
-    title: "Структура потребления по регионам",
-    catagories: [
-      {
-        name: "Китай",
-        value: 33,
-        color: "#ff6384",
-      },
-      {
-        name: "Европа",
-        value: 25,
-        color: "#ff9f40",
-      },
-      {
-        name: "Северная Америка",
-        value: 24,
-        color: "#ffcd56",
-      },
-      {
-        name: "Юв. Азия",
-        value: 13,
-        color: "#4bc0c0",
-      },
-      {
-        name: "Остальной мир",
-        value: 5,
-        color: "#36a2eb",
-      },
-    ],
-};
-
-const globalButanolMarket = {
-    title: "Мировой рынок бутанола",
-    categories: [
-        {
-            name: "2020",
-            value: 3.1,
-            valuePostfix: "млрд $", 
-            columnColor: "#FFFFFF"
-        }, 
-        {
-            name: "2025",
-            value: 4,
-            valuePostfix: "млрд $",
-            columnColor: "#ABB466"
-        }
-    ],
-}
-
 
 function GetGeneratedStyleForColumn(columnColor, heightPercent){
-    var style = {
+    return {
         height: heightPercent + "vh",
-        background: columnColor,
+        backgroundColor: columnColor,
         color: "#383832",
-    }
-    return style;
+    };
 }
 
 function GetButanolMarketChartArray(){
   
+    const globalButanolMarket = {
+        title: "Мировой рынок бутанола",
+        categories: [
+            {
+                name: "2020",
+                value: 3.1,
+                valuePostfix: "млрд $", 
+                columnColor: "#FFFFFF"
+            }, 
+            {
+                name: "2025",
+                value: 4,
+                valuePostfix: "млрд $",
+                columnColor: "#ABB466"
+            }
+        ],
+    }
+    
     var butanolMarketChartConstructor = [];
     var localButanolMarketChart = [];
 
@@ -82,10 +50,67 @@ function GetButanolMarketChartArray(){
     return butanolMarketChartConstructor;
 }
 
-function GetButanolStructureOfUsageArray(){
-    for(var indexOfSection = 0; indexOfSection < regionStructure.catagories.length; indexOfSection++){
+function GetStyleForStructureOfUsage(percentValue, sectionColor) {
+    return{
+        width: percentValue,
+        backgroundColor: sectionColor}
+}
 
+function GetButanolStructureOfUsageArray(){
+    
+    const regionStructure = {
+        title: "Структура потребления по регионам",
+        catagories: [
+          {
+            name: "Китай",
+            value: "33%",
+            color: "#495E62",
+          },
+          {
+            name: "Европа",
+            value: "25%",
+            color: "#6A6E39",
+          },
+          {
+            name: "Северная Америка",
+            value: "24%",
+            color: "#F0B14E",
+          },
+          {
+            name: "Юв. Азия",
+            value: "13%",
+            color: "#BC5A04",
+          },
+          {
+            name: "Остальной мир",
+            value: "5%",
+            color: "#892218",
+          },
+        ],
+    };
+    
+
+    var structureOfUsageConstructor = [];
+    var structureOfUsageUnderlineConstructor = [];
+    
+    for(var indexOfSection = 0; indexOfSection < regionStructure.catagories.length; indexOfSection++){
+        var styleObject = GetStyleForStructureOfUsage(regionStructure.catagories[indexOfSection].value,
+            regionStructure.catagories[indexOfSection].color);
+        structureOfUsageConstructor.push(
+                    <div className="syncro-progress-stepped-item" data-id={"progress-stepped-item-0-" + {indexOfSection}} style={styleObject}>
+                        {regionStructure.catagories[indexOfSection].value}</div>);
+        structureOfUsageUnderlineConstructor.push(
+            <div class="syncro-col-auto">
+                <button class="syncro-btn" data-target="progress-stepped-item-0-0">
+                    <span className="syncro-dot" style={{backgroundColor: regionStructure.catagories[indexOfSection].color}}></span>
+                    <span className="syncro-category-name">{regionStructure.catagories[indexOfSection].name}</span>
+                </button>
+            </div>
+        )
     }
+    structureOfUsageConstructor.push(<div class="syncro-row">{structureOfUsageUnderlineConstructor}</div>);
+    structureOfUsageConstructor.push(<p className="chart-underline">{regionStructure.title}</p>);
+    return structureOfUsageConstructor;
 }
 
 function MarketOverviewSection(){
