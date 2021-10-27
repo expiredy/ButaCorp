@@ -32,7 +32,7 @@ function ContactsSection(){
                         <div className="contact-container">
                             <img src={telegram_logo} alt="telegram"></img>
                             <div className="contact-element">
-                                <a href="https://t.me/Vladorob">Владислав Рогозин</a></div>
+                                <a href="https://t.me/Vladorob">@Vladorob</a></div>
                         </div>
                     </li>
                     <li>

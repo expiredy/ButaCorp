@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App';
+import App from './components/app/App';
 import NavBar from './components/nav-bar/NavBar';
 
 ReactDOM.render(
@@ -9,5 +9,4 @@ ReactDOM.render(
     <NavBar />
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
-);
+  document.getElementById('main-body'));

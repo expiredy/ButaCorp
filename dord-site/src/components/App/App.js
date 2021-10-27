@@ -7,12 +7,10 @@ import MarketOverviewSection from '../information-sections/MarketOverviewSection
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
           <AboutUsSection />
           <ProblematicSection />
           <MarketOverviewSection />
           <ContactsSection />
-      </header>
     </div>
   );
 }
