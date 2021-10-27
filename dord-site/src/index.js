@@ -9,5 +9,4 @@ ReactDOM.render(
     <NavBar />
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
-);
+  document.getElementById('main-body'));
