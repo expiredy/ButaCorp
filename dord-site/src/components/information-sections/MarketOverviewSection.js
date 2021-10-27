@@ -97,20 +97,20 @@ function GetButanolStructureOfUsageArray(){
         var styleObject = GetStyleForStructureOfUsage(regionStructure.catagories[indexOfSection].value,
             regionStructure.catagories[indexOfSection].color);
         structureOfUsageConstructor.push(
-                    <div className="syncro-progress-stepped-item" data-id={"progress-stepped-item-0-" + {indexOfSection}} style={styleObject}>
+                    <div className="syncro-progress-stepped-item" style={styleObject}>
                         {regionStructure.catagories[indexOfSection].value}</div>);
         structureOfUsageUnderlineConstructor.push(
             <div class="syncro-col-auto">
-                <button class="syncro-btn" data-target="progress-stepped-item-0-0">
+                <button class="syncro-btn">
                     <span className="syncro-dot" style={{backgroundColor: regionStructure.catagories[indexOfSection].color}}></span>
                     <span className="syncro-category-name">{regionStructure.catagories[indexOfSection].name}</span>
                 </button>
             </div>
         )
     }
-    structureOfUsageConstructor.push(<div class="syncro-row">{structureOfUsageUnderlineConstructor}</div>);
+    structureOfUsageConstructor.push(<div className="syncro-progress-stepped">{structureOfUsageUnderlineConstructor}</div>);
     structureOfUsageConstructor.push(<p className="chart-underline">{regionStructure.title}</p>);
-    return structureOfUsageConstructor;
+    return <div className="syncro-card-body">{structureOfUsageConstructor}</div>;
 }
 
 function MarketOverviewSection(){
