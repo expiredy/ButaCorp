@@ -18,7 +18,9 @@
 
 } */
 
-
+.text-session-list{
+    
+}
 
 .chart-underline{
     color: #A3AC63;
@@ -31,7 +33,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
 
-.syncro-card button {
+.structure-of-usage-card button {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
@@ -39,7 +41,7 @@
   letter-spacing: inherit;
 }
 
-.syncro-card-body {
+.structure-of-usage-card-body {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -48,7 +50,7 @@
 }
 
 
-.syncro-progress-stepped {
+.structure-of-usage-progress-stepped {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,22 +64,13 @@
   margin-bottom: 15px;
 }
 
-.syncro-progress-stepped-item {
+.structure-of-usage-progress-stepped-item {
   display: flex;
 }
 
-.syncro-progress-stepped-item:first-child {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-
-.syncro-progress-stepped-item:last-child {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
 
 
-.syncro-col-auto {
+.structure-of-usage-col-auto {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -89,7 +82,7 @@
   padding-left: 10px;
 }
 
-.syncro-btn {
+.structure-of-usage-btn {
   padding: 0;
   color: inherit;
   background: transparent;
@@ -105,17 +98,17 @@
   align-items: center;
 }
 
-.syncro-dot {
+.structure-of-usage-dot {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 1vh;
+  height: 1vh;
   line-height: 1;
   background-color: transparent;
   border-radius: 50%;
   margin-right: 5px;
 }
 
-.syncro-category-name {
+.structure-of-usage-category-name {
   font-size: 14px;
   font-weight: 600;
   color: #FFFFFF;
@@ -124,7 +117,7 @@
 
 
 @media screen and (max-width:1000px){
-    .syncro-progress-stepped{display: block;
+    .structure-of-usage-progress-stepped{display: block;
     /* float: right; */
     height: 100px;
     }

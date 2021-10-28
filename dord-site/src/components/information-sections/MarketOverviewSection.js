@@ -101,20 +101,20 @@ function GetButanolStructureOfUsageArray(){
         var styleObject = GetStyleForStructureOfUsage(regionStructure.catagories[indexOfSection].value,
             regionStructure.catagories[indexOfSection].color);
         structureOfUsageConstructor.push(
-                    <div className="syncro-progress-stepped-item" style={styleObject}>
+                    <div className="structure-of-usage-progress-stepped-item" style={styleObject}>
                         {regionStructure.catagories[indexOfSection].value}</div>);
         structureOfUsageUnderlineConstructor.push(
-            <div class="syncro-col-auto">
-                <button class="syncro-btn">
-                    <span className="syncro-dot" style={{backgroundColor: regionStructure.catagories[indexOfSection].color}}></span>
-                    <span className="syncro-category-name">{regionStructure.catagories[indexOfSection].name}</span>
+            <div class="structure-of-usage-col-auto">
+                <button class="structure-of-usage-btn">
+                    <span className="structure-of-usage-dot" style={{backgroundColor: regionStructure.catagories[indexOfSection].color}}></span>
+                    <span className="structure-of-usage-category-name">{regionStructure.catagories[indexOfSection].name}</span>
                 </button>
             </div>
         )
     }
-    structureOfUsageConstructor.push(<div className="syncro-progress-stepped">{structureOfUsageUnderlineConstructor}</div>);
+    structureOfUsageConstructor.push(<div className="structure-of-usage-progress-stepped">{structureOfUsageUnderlineConstructor}</div>);
     structureOfUsageConstructor.push(<p className="chart-underline">{regionStructure.title}</p>);
-    return <div className="syncro-card-body">{structureOfUsageConstructor}</div>;
+    return <div className="structure-of-usage-card-body">{structureOfUsageConstructor}</div>;
 }
 
 function MarketOverviewSection(){
@@ -128,7 +128,7 @@ function MarketOverviewSection(){
             <div class="container__half">
                 <div className="information-chart-container">
                     <h3 className="text-session">Среднегодовой темп роста <span>5,6</span></h3>
-                    <ul>
+                    <ul className="text-session-list">
                         <li>Растет потребление бутанола в промышленности;</li>
                         <li>Тренд на биотехнологии открывает доступ новым игрокам на рынок;</li>
                         <li>M&A и приток венчурных инвестиций;</li>
