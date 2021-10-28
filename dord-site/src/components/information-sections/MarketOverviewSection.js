@@ -4,7 +4,7 @@ import "./MarketChartStyle.css";
 
 function GetGeneratedStyleForColumn(columnColor, heightPercent){
     return {
-        height: heightPercent + "vh",
+        "--size:": heightPercent / 100,
         backgroundColor: columnColor,
         color: "#383832",
     };
@@ -37,15 +37,19 @@ function GetButanolMarketChartArray(){
 
     for (var indexOfColumn = 0; indexOfColumn < globalButanolMarket.categories.length; indexOfColumn++){
         var heightPercent =  Math.floor( globalButanolMarket.categories[indexOfColumn].value / maxColumnWidth * 100);
-        console.log(indexOfColumn + " " + heightPercent);
         const styleObject = GetGeneratedStyleForColumn(globalButanolMarket.categories[indexOfColumn].columnColor, heightPercent);
+        console.log( heightPercent / 100);
         localButanolMarketChart.push(
-        <li className="chart-column" style={styleObject}>
-          {globalButanolMarket.categories[indexOfColumn].value + " "}
-             <span>{globalButanolMarket.categories[indexOfColumn].valuePostfix}</span></li>);}
+            <tr>
+                <td style={styleObject}>
+                    <span className="data">
+                        {globalButanolMarket.categories[indexOfColumn].value}<br />
+                        {globalButanolMarket.categories[indexOfColumn].valuePostfix}</span></td>
+            </tr>
+        );}
 
 
-    butanolMarketChartConstructor.push(<ul className="chart-container">{localButanolMarketChart}</ul>);
+    butanolMarketChartConstructor.push(<div className="chart-container">{localButanolMarketChart}</div>);
     butanolMarketChartConstructor.push(<p className="chart-underline">{globalButanolMarket.title}</p>);
     return butanolMarketChartConstructor;
 }
