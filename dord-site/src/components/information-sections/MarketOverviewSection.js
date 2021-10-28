@@ -4,7 +4,7 @@ import "./MarketChartStyle.css";
 
 function GetGeneratedStyleForColumn(columnColor, heightPercent){
     return {
-        "--size:": heightPercent / 100,
+        "--size": heightPercent / 100,
         backgroundColor: columnColor,
         color: "#383832",
     };
@@ -101,7 +101,7 @@ function GetButanolStructureOfUsageArray(){
         var styleObject = GetStyleForStructureOfUsage(regionStructure.catagories[indexOfSection].value,
             regionStructure.catagories[indexOfSection].color);
         structureOfUsageConstructor.push(
-                    <div className="structure-of-usage-progress-stepped-item" style={styleObject}>
+                    <div className="structure-of-usage-chart-item" style={styleObject}>
                         {regionStructure.catagories[indexOfSection].value}</div>);
         structureOfUsageUnderlineConstructor.push(
             <div class="structure-of-usage-col-auto">
@@ -112,9 +112,13 @@ function GetButanolStructureOfUsageArray(){
             </div>
         )
     }
-    structureOfUsageConstructor.push(<div className="structure-of-usage-progress-stepped">{structureOfUsageUnderlineConstructor}</div>);
-    structureOfUsageConstructor.push(<p className="chart-underline">{regionStructure.title}</p>);
-    return <div className="structure-of-usage-card-body">{structureOfUsageConstructor}</div>;
+    structureOfUsageConstructor.push(<div className="structure-of-usage-field-underline">{structureOfUsageUnderlineConstructor}</div>);
+
+    return (
+        <div>
+            <div>{structureOfUsageConstructor}</div>
+            <p className="chart-underline">{regionStructure.title}</p>
+        </div>);
 }
 
 function MarketOverviewSection(){
@@ -123,6 +127,9 @@ function MarketOverviewSection(){
     return(
         <div id="business_model" className="container">
             <div class="container__half">
+                <div className="beatty-header-line" style={{width: "300px", marginLeft: "30vh"}}></div>
+                <h2 className="section-middle-title">Обзор рынка</h2> 
+                <div className="beatty-header-line" style={{width: "150px"}}></div> 
                 {butanolMarketChart}
             </div>
             <div class="container__half">

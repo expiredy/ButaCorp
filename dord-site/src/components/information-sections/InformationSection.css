@@ -7,6 +7,17 @@
     color: #A3AD62;
 }
 
+.section-middle-title{
+    color: #A3AD62;
+    margin-left: -20vh;
+}
+
+.beatty-header-line{
+    width: 200px;
+    height: 6px;
+    background-color:  #FFFFFF;
+    margin-left: 3vh}
+
 .container {
     padding-top: 10vh;
     padding-left: 10%;
