@@ -55,6 +55,11 @@ nav{
         position: relative;
         justify-content: flex-end;
     }
+    .hamburger-logo:hover{
+        height: 500px;
+        width: 100px;
+    }
+
     .line-link {
         width: 30px;
         height: 3px;
