@@ -41,7 +41,6 @@ function GetButanolMarketChartArray(){
     for (var indexOfColumn = 0; indexOfColumn < globalButanolMarket.categories.length; indexOfColumn++){
         var heightPercent =  Math.floor( globalButanolMarket.categories[indexOfColumn].value / maxColumnWidth * 100);
         const styleObject = GetGeneratedStyleForColumn(globalButanolMarket.categories[indexOfColumn].columnColor, heightPercent);
-        console.log( heightPercent / 100);
         localButanolMarketChart.push(
             <tr className="chart-container__item">
                 <td style={styleObject}>
@@ -50,7 +49,7 @@ function GetButanolMarketChartArray(){
                         {globalButanolMarket.categories[indexOfColumn].valuePostfix}</span></td>
             </tr>
         );
-        marketColumnUnderlineConstructor.push(<p>{globalButanolMarket.categories[indexOfColumn].name}</p>)
+        marketColumnUnderlineConstructor.push(<p className="beatty-chart-underline-text__item">{globalButanolMarket.categories[indexOfColumn].name}</p>)
         }
 
 
@@ -108,7 +107,7 @@ function GetButanolStructureOfUsageArray(){
         var styleObject = GetStyleForStructureOfUsage(regionStructure.catagories[indexOfSection].value,
             regionStructure.catagories[indexOfSection].color);
         structureOfUsageConstructor.push(
-                    <div className="structure-of-usage-chart-item" style={styleObject}>
+                    <div className="structure-of-usage-chart__item" style={styleObject}>
                         {regionStructure.catagories[indexOfSection].value}</div>);
         structureOfUsageUnderlineConstructor.push(
             <div class="structure-of-usage-col-auto">
@@ -119,11 +118,11 @@ function GetButanolStructureOfUsageArray(){
             </div>
         )
     }
-    structureOfUsageConstructor.push(<div className="structure-of-usage-field-underline">{structureOfUsageUnderlineConstructor}</div>);
 
     return (
-        <div>
-            <div>{structureOfUsageConstructor}</div>
+        <div className="structure-of-usage-container">
+            <div className="structure-of-usage-chart">{structureOfUsageConstructor}</div>
+            <div className="structure-of-usage-field-underline">{structureOfUsageUnderlineConstructor}</div>
             <p className="chart-underline">{regionStructure.title}</p>
         </div>);
 }
@@ -139,10 +138,10 @@ function MarketOverviewSection(){
                 <div className="beatty-header-line" style={{width: "10vh", marginLeft: "27%"}}></div> 
             </div> 
             <div className="container">
-                <div class="container__half" style={{flex: 1}}>
+                <div class="container__half" style={{flex: 2, justifyContent: "center"}}>
                     {butanolMarketChart}
                 </div>
-                <div class="container__half" style={{flex: 2}}>
+                <div class="container__half" style={{flex: 3}}>
                     <div className="information-chart-container">
                         <h3 className="text-session">Среднегодовой темп роста <span>5,6</span></h3>
                         <ul className="text-session-list">
@@ -152,6 +151,15 @@ function MarketOverviewSection(){
                             <li>Растущая государственная поддержка в сфере зеленой индустрии.</li>
                         </ul>
                     </div>
+
+                    <div className="beatty-header-line"
+                        style={{width: "50vh",
+                                height: "0.25vh",
+                                marginTop: "8vh",
+                                marginBottom: "8vh",
+                                marginLeft: "25%",
+                                backgroundColor: "#A3AD62"}}></div>
+
                     {structureOfUsage}
                 </div>
             </div>
