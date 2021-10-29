@@ -49,13 +49,13 @@ function GetButanolMarketChartArray(){
                         {globalButanolMarket.categories[indexOfColumn].valuePostfix}</span></td>
             </tr>
         );
-        marketColumnUnderlineConstructor.push(<p className="beatty-chart-underline-text__item">{globalButanolMarket.categories[indexOfColumn].name}</p>)
+        marketColumnUnderlineConstructor.push(<p className="beauty-chart-underline-text__item">{globalButanolMarket.categories[indexOfColumn].name}</p>)
         }
 
 
     butanolMarketChartConstructor.push(<div className="chart-container">{localButanolMarketChart}</div>);
-    butanolMarketChartConstructor.push(<div className="beatty-chart-line"></div>);
-    butanolMarketChartConstructor.push(<div className="beatty-chart-underline-text">{marketColumnUnderlineConstructor}</div>);
+    butanolMarketChartConstructor.push(<div className="beauty-chart-line"></div>);
+    butanolMarketChartConstructor.push(<div className="beauty-chart-underline-text">{marketColumnUnderlineConstructor}</div>);
     butanolMarketChartConstructor.push(<p className="chart-underline">{globalButanolMarket.title}</p>);
     return butanolMarketChartConstructor;
 }
@@ -133,9 +133,9 @@ function MarketOverviewSection(){
     return(
         <div id="business_model">
             <div className="middle-header-section">
-                <div className="beatty-header-line" style={{width: "30vh", marginLeft: "35%", marginTop: "20vh"}}></div>
+                <div className="beauty-header-line" style={{width: "30vh", marginLeft: "35%", marginTop: "20vh"}}></div>
                 <h2 className="section-middle-title">Обзор рынка</h2> 
-                <div className="beatty-header-line" style={{width: "10vh", marginLeft: "27%"}}></div> 
+                <div className="beauty-header-line" style={{width: "10vh", marginLeft: "27%"}}></div> 
             </div> 
             <div className="container">
                 <div class="container__half" style={{flex: 2, justifyContent: "center"}}>
@@ -155,8 +155,8 @@ function MarketOverviewSection(){
                     <div className="beatty-header-line"
                         style={{width: "50vh",
                                 height: "0.25vh",
-                                marginTop: "8vh",
-                                marginBottom: "8vh",
+                                marginTop: "8.5vh",
+                                marginBottom: "8.5vh",
                                 marginLeft: "25%",
                                 backgroundColor: "#A3AD62"}}></div>
 
