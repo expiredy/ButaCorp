@@ -2,27 +2,42 @@
     list-style-type: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    
+    align-items: flex-end;
+}
+
+.chart-container__item{
+  padding-right: 10px;
+  width: 10vh;
 }
 
 .chart-underline{
     color: #A3AC63;
 }
 
-.information-chart-container ul{
-    text-align: left;
+.information-chart-container ul {
+      text-align: left;
+      list-style-type: none;
+}
+
+.information-chart-container ul > li:before{
+    content: "- ";
+}
+
+.beatty-chart-line{
+  margin-top: 20px;
+  width: 200px;
+  height: 0.75vh;
+  background-color:  #FFFFFF;
+}
+
+.beatty-chart-underline-text{
+
 }
 
 
+
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
-
-
-
-
-
 
 /* style for underline */
 .structure-of-usage-field-underline {

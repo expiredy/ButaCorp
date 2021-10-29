@@ -4,9 +4,11 @@ import "./MarketChartStyle.css";
 
 function GetGeneratedStyleForColumn(columnColor, heightPercent){
     return {
-        "--size": heightPercent / 100,
+        height: heightPercent,
         backgroundColor: columnColor,
         color: "#383832",
+        paddingBottom: heightPercent / 5 + "vh",
+        paddingTop: heightPercent / 5 + "vh",
     };
 }
 
@@ -32,6 +34,7 @@ function GetButanolMarketChartArray(){
     
     var butanolMarketChartConstructor = [];
     var localButanolMarketChart = [];
+    var marketColumnUnderlineConstructor = [];
 
     var maxColumnWidth = Math.max.apply(Math, globalButanolMarket.categories.map(a => a.value));
 
@@ -40,16 +43,20 @@ function GetButanolMarketChartArray(){
         const styleObject = GetGeneratedStyleForColumn(globalButanolMarket.categories[indexOfColumn].columnColor, heightPercent);
         console.log( heightPercent / 100);
         localButanolMarketChart.push(
-            <tr>
+            <tr className="chart-container__item">
                 <td style={styleObject}>
                     <span className="data">
                         {globalButanolMarket.categories[indexOfColumn].value}<br />
                         {globalButanolMarket.categories[indexOfColumn].valuePostfix}</span></td>
             </tr>
-        );}
+        );
+        marketColumnUnderlineConstructor.push(<p>{globalButanolMarket.categories[indexOfColumn].name}</p>)
+        }
 
 
     butanolMarketChartConstructor.push(<div className="chart-container">{localButanolMarketChart}</div>);
+    butanolMarketChartConstructor.push(<div className="beatty-chart-line"></div>);
+    butanolMarketChartConstructor.push(<div className="beatty-chart-underline-text">{marketColumnUnderlineConstructor}</div>);
     butanolMarketChartConstructor.push(<p className="chart-underline">{globalButanolMarket.title}</p>);
     return butanolMarketChartConstructor;
 }
@@ -125,24 +132,28 @@ function MarketOverviewSection(){
     var butanolMarketChart = GetButanolMarketChartArray();
     var structureOfUsage = GetButanolStructureOfUsageArray();
     return(
-        <div id="business_model" className="container">
-            <div class="container__half">
-                <div className="beatty-header-line" style={{width: "300px", marginLeft: "30vh"}}></div>
+        <div id="business_model">
+            <div className="middle-header-section">
+                <div className="beatty-header-line" style={{width: "30vh", marginLeft: "35%", marginTop: "20vh"}}></div>
                 <h2 className="section-middle-title">Обзор рынка</h2> 
-                <div className="beatty-header-line" style={{width: "150px"}}></div> 
-                {butanolMarketChart}
-            </div>
-            <div class="container__half">
-                <div className="information-chart-container">
-                    <h3 className="text-session">Среднегодовой темп роста <span>5,6</span></h3>
-                    <ul className="text-session-list">
-                        <li>Растет потребление бутанола в промышленности;</li>
-                        <li>Тренд на биотехнологии открывает доступ новым игрокам на рынок;</li>
-                        <li>M&A и приток венчурных инвестиций;</li>
-                        <li>Растущая государственная поддержка в сфере зеленой индустрии.</li>
-                    </ul>
+                <div className="beatty-header-line" style={{width: "10vh", marginLeft: "27%"}}></div> 
+            </div> 
+            <div className="container">
+                <div class="container__half" style={{flex: 1}}>
+                    {butanolMarketChart}
                 </div>
-                {structureOfUsage}
+                <div class="container__half" style={{flex: 2}}>
+                    <div className="information-chart-container">
+                        <h3 className="text-session">Среднегодовой темп роста <span>5,6</span></h3>
+                        <ul className="text-session-list">
+                            <li>Растет потребление бутанола в промышленности;</li>
+                            <li>Тренд на биотехнологии открывает доступ новым игрокам на рынок;</li>
+                            <li>M&A и приток венчурных инвестиций;</li>
+                            <li>Растущая государственная поддержка в сфере зеленой индустрии.</li>
+                        </ul>
+                    </div>
+                    {structureOfUsage}
+                </div>
             </div>
         </div>
     )
