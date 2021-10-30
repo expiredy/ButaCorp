@@ -4,9 +4,11 @@ import "./MarketChartStyle.css";
 
 function GetGeneratedStyleForColumn(columnColor, heightPercent){
     return {
-        "--size:": heightPercent / 100,
+        height: heightPercent,
         backgroundColor: columnColor,
         color: "#383832",
+        paddingBottom: heightPercent / 5 + "vh",
+        paddingTop: heightPercent / 5 + "vh",
     };
 }
 
@@ -32,24 +34,28 @@ function GetButanolMarketChartArray(){
     
     var butanolMarketChartConstructor = [];
     var localButanolMarketChart = [];
+    var marketColumnUnderlineConstructor = [];
 
     var maxColumnWidth = Math.max.apply(Math, globalButanolMarket.categories.map(a => a.value));
 
     for (var indexOfColumn = 0; indexOfColumn < globalButanolMarket.categories.length; indexOfColumn++){
         var heightPercent =  Math.floor( globalButanolMarket.categories[indexOfColumn].value / maxColumnWidth * 100);
         const styleObject = GetGeneratedStyleForColumn(globalButanolMarket.categories[indexOfColumn].columnColor, heightPercent);
-        console.log( heightPercent / 100);
         localButanolMarketChart.push(
-            <tr>
+            <tr className="chart-container__item">
                 <td style={styleObject}>
                     <span className="data">
                         {globalButanolMarket.categories[indexOfColumn].value}<br />
                         {globalButanolMarket.categories[indexOfColumn].valuePostfix}</span></td>
             </tr>
-        );}
+        );
+        marketColumnUnderlineConstructor.push(<p className="beauty-chart-underline-text__item">{globalButanolMarket.categories[indexOfColumn].name}</p>)
+        }
 
 
     butanolMarketChartConstructor.push(<div className="chart-container">{localButanolMarketChart}</div>);
+    butanolMarketChartConstructor.push(<div className="beauty-chart-line"></div>);
+    butanolMarketChartConstructor.push(<div className="beauty-chart-underline-text">{marketColumnUnderlineConstructor}</div>);
     butanolMarketChartConstructor.push(<p className="chart-underline">{globalButanolMarket.title}</p>);
     return butanolMarketChartConstructor;
 }
@@ -101,41 +107,61 @@ function GetButanolStructureOfUsageArray(){
         var styleObject = GetStyleForStructureOfUsage(regionStructure.catagories[indexOfSection].value,
             regionStructure.catagories[indexOfSection].color);
         structureOfUsageConstructor.push(
-                    <div className="syncro-progress-stepped-item" style={styleObject}>
+                    <div className="structure-of-usage-chart__item" style={styleObject}>
                         {regionStructure.catagories[indexOfSection].value}</div>);
         structureOfUsageUnderlineConstructor.push(
-            <div class="syncro-col-auto">
-                <button class="syncro-btn">
-                    <span className="syncro-dot" style={{backgroundColor: regionStructure.catagories[indexOfSection].color}}></span>
-                    <span className="syncro-category-name">{regionStructure.catagories[indexOfSection].name}</span>
+            <div class="structure-of-usage-col-auto">
+                <button class="structure-of-usage-btn">
+                    <span className="structure-of-usage-dot" style={{backgroundColor: regionStructure.catagories[indexOfSection].color}}></span>
+                    <span className="structure-of-usage-category-name">{regionStructure.catagories[indexOfSection].name}</span>
                 </button>
             </div>
         )
     }
-    structureOfUsageConstructor.push(<div className="syncro-progress-stepped">{structureOfUsageUnderlineConstructor}</div>);
-    structureOfUsageConstructor.push(<p className="chart-underline">{regionStructure.title}</p>);
-    return <div className="syncro-card-body">{structureOfUsageConstructor}</div>;
+
+    return (
+        <div className="structure-of-usage-container">
+            <div className="structure-of-usage-chart">{structureOfUsageConstructor}</div>
+            <div className="structure-of-usage-field-underline">{structureOfUsageUnderlineConstructor}</div>
+            <p className="chart-underline">{regionStructure.title}</p>
+        </div>);
 }
 
 function MarketOverviewSection(){
     var butanolMarketChart = GetButanolMarketChartArray();
     var structureOfUsage = GetButanolStructureOfUsageArray();
     return(
-        <div id="business_model" className="container">
-            <div class="container__half">
-                {butanolMarketChart}
-            </div>
-            <div class="container__half">
-                <div className="information-chart-container">
-                    <h3 className="text-session">Среднегодовой темп роста <span>5,6</span></h3>
-                    <ul>
-                        <li>Растет потребление бутанола в промышленности;</li>
-                        <li>Тренд на биотехнологии открывает доступ новым игрокам на рынок;</li>
-                        <li>M&A и приток венчурных инвестиций;</li>
-                        <li>Растущая государственная поддержка в сфере зеленой индустрии.</li>
-                    </ul>
+        <div id="business_model">
+            <div className="middle-header-section">
+                <div className="beauty-header-line" style={{width: "30vh", marginLeft: "35%", marginTop: "20vh"}}></div>
+                <h2 className="section-middle-title">Обзор рынка</h2> 
+                <div className="beauty-header-line" style={{width: "10vh", marginLeft: "27%"}}></div> 
+            </div> 
+            <div className="container">
+                <div class="container__half" style={{flex: 2, justifyContent: "center"}}>
+                    {butanolMarketChart}
                 </div>
-                {structureOfUsage}
+                <div class="container__half" style={{flex: 3}}>
+                    <div className="information-chart-container">
+                        <h3 className="text-session">Среднегодовой темп роста <span>5,6</span></h3>
+                        <ul className="text-session-list">
+                            <li>Растет потребление бутанола в промышленности;</li>
+                            <li>Тренд на биотехнологии открывает доступ новым игрокам на рынок;</li>
+                            <li>M&A и приток венчурных инвестиций;</li>
+                            <li>Растущая государственная поддержка в сфере зеленой индустрии.</li>
+                        </ul>
+                    </div>
+
+                    <div className="beatty-header-line"
+                        style={{width: "50vh",
+                                height: "0.25vh",
+                                marginTop: "8.5vh",
+                                marginBottom: "8.5vh",
+                                marginLeft: "25%",
+                                backgroundColor: "#A3AD62"}}></div>
+
+                    {structureOfUsage}
+                </div>
             </div>
         </div>
     )

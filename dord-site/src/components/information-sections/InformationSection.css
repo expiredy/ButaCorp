@@ -7,6 +7,23 @@
     color: #A3AD62;
 }
 
+.section-middle-title{
+    color: #A3AD62;
+    margin-left: -30%;
+}
+
+.middle-header-section{
+    margin-left: -35vh;
+}
+
+.beauty-header-line{
+    width: 150px;
+    height: 0.75vh;
+    background-color:  #FFFFFF;
+    margin-top: -20px;
+    margin-bottom: -30px;
+    }
+
 .container {
     padding-top: 10vh;
     padding-left: 10%;
@@ -53,8 +70,13 @@
 }
 
 @media screen and (max-width:700px){
-    .container div.hidden-logo-container{
-        display: none;
-        flex: 0;
-    }    
+    .container{
+        display: block;
+    }
+}
+
+@media screen and (max-width:1100px){
+    .beatty-header-line{
+        margin: auto;
+    }
 }
