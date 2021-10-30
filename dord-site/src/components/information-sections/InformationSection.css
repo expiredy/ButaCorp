@@ -1,6 +1,7 @@
 
 .huge-title-h1{
     color: rgb(250, 250, 250);
+    font-size: 300%;
 }
 
 .middle-title-h1{
@@ -14,6 +15,11 @@
 
 .middle-header-section{
     margin-left: -35vh;
+}
+
+.huge-header-section{
+    padding-top: 10vh;
+    margin-left: -100vh;
 }
 
 .beauty-header-line{
