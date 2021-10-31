@@ -79,6 +79,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: space-between;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     -webkit-box-align: stretch;
@@ -98,15 +99,12 @@
   position: relative;
   width: auto;
   max-width: 100%;
-  margin-top: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  display: flex;
+
 }
 
 .structure-of-usage-btn {
   padding: 0;
-  margin-left: 3vh;
-  margin-right: 3vh;
   color: inherit;
   background: transparent;
   border: 0;
