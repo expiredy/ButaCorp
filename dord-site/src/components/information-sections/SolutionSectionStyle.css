@@ -1,0 +1,14 @@
+.steps-layout{
+    display: flex;
+    justify-content: space-around;
+}
+
+.step-container{
+    background-color: #A3AD62;
+    width: 25%;
+    margin: 5vh;
+    padding: 2%;
+}
+.step-text-container{
+    text-align: left;
+}
