@@ -20,7 +20,9 @@ function StepsElementsGenerator() {
                                     {
                                     title: "Наши наработки:",
                                     content: ["Модифицированная среда и методы воздействия", "Комбинация штаммов"]
-                                    }]
+                                    }],
+                titleColor: "#FFFFFF",
+                contentColor: "#383832"  
             }
         },
         {
@@ -34,7 +36,9 @@ function StepsElementsGenerator() {
                                     {
                                     title: "Наши наработки:",
                                     content: ["Отказ от сепарации биомассы"]
-                                    }]
+                                    }],
+                titleColor: "#383832",
+                contentColor: "#FFFFFF"    
             }
         },
         {   
@@ -48,7 +52,9 @@ function StepsElementsGenerator() {
                                     {
                                     title: "Наши наработки:",
                                     content: ["Модифицированная среда и методы воздействия", "Комбинация штаммов"]
-                                    }]
+                                    }],
+                titleColor: "#FFFFFF",
+                contentColor: "#383832"  
             }
         },
         {
@@ -62,7 +68,9 @@ function StepsElementsGenerator() {
                                     {
                                     title: "Наши наработки:",
                                     content: ["Ректификационная колонна с отводом твердой побочной продукции"]
-                                    }]
+                                    }],
+                titleColor: "#383832",
+                contentColor: "#FFFFFF"  
             }
         }
     ]
@@ -72,7 +80,9 @@ function StepsElementsGenerator() {
         var contentElementGenerator = [];
         for(var sectionIndex = 0; sectionIndex < sectionsArray.descriptionSection.length; sectionIndex++) {
  
-            contentElementGenerator.push(<h3>{sectionsArray.descriptionSection[sectionIndex].title}</h3>);
+            contentElementGenerator.push(
+            <h3 className="section-content-header" style={{color: sectionsArray.titleColor}}>
+                {sectionsArray.descriptionSection[sectionIndex].title}</h3>);
             if (sectionsArray.descriptionSection[sectionIndex].content.length > 1){
                 var sectionsElementsList = [];
                 for(var contentIndex = 0;
@@ -80,14 +90,16 @@ function StepsElementsGenerator() {
                       contentIndex++){
                         sectionsElementsList.push(
                             <li>
-                                <p>{sectionsArray.descriptionSection[sectionIndex].content[contentIndex]}</p>
+                                <p className="content-paragraph"  style={{color: sectionsArray.contentColor}}>
+                                    {sectionsArray.descriptionSection[sectionIndex].content[contentIndex]}</p>
                             </li>
                         );
                      }
                 contentElementGenerator.push(<ul>{sectionsElementsList}</ul>);
             }
             else{
-                contentElementGenerator.push(<p>{sectionsArray.descriptionSection[sectionIndex].content[0]}</p>);
+                contentElementGenerator.push(<p className="content-paragraph"  style={{color: sectionsArray.contentColor}}>
+                    {sectionsArray.descriptionSection[sectionIndex].content[0]}</p>);
                 }
         }
         
@@ -102,7 +114,7 @@ function StepsElementsGenerator() {
             <div className="step-container">
                 <img src={stepsData[stepIndex].logo} className="step-logo" alt="step-logo"></img>
                 <div className="step-text-container">
-                    <h3>
+                    <h3 className="header-session">
                         {stepsData[stepIndex].headingText}
                     </h3>
                     <div>
