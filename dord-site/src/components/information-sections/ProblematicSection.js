@@ -23,7 +23,7 @@ function ProblematicSection(){
             </ul>
         </div>
         <div className="container__half hidden-logo-container" >
-            <img src={SmokeThing} className="image-container" alt="SmokeThing"></img>
+            <img src={SmokeThing} className="image-container" style={{paddingTop: "10vh"}} alt="SmokeThing"></img>
         </div>
     </div>)
 }

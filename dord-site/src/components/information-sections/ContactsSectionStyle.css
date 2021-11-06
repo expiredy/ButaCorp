@@ -1,12 +1,28 @@
 .contact-list{
     list-style-type: none;
+    justify-content: flex-start; 
 }
 
 .contact-list li{
-
+    display: flex; 
 }
 
-.contact-container{ 
-    position: flex;
-    display: inline-block;
+.contact-container{
+    display: flex;
+    padding-bottom: 1vh;
+}
+
+.contact-logo-img{
+    width: 5vh;
+    height: 50%;
+}
+
+.contact-element{
+    text-align: left;
+    flex: 15;
+    padding-left: 10px;
+}
+
+.contact-element a{
+    text-decoration: none;
 }
