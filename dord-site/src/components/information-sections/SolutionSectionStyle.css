@@ -1,16 +1,26 @@
 .steps-layout{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 2% 0 2%;
+
+}
+
+.step-logo{
+    height: 10%;
 }
 
 .step-container{
     background-color: #A3AD62;
-    width: 25%;
-    margin: 5vh;
+    width: 15%;
     padding: 2%;
 }
+
 .step-text-container{
     text-align: left;
+}
+
+.header-session{
+    font-size: 3vh;
 }
 
 .section-content-header{
