@@ -5,10 +5,14 @@
 
 .step-container{
     background-color: #A3AD62;
-    width: 25%;
+    flex: 1;
     margin: 5vh;
     padding: 2%;
 }
+.header-session{
+    font-size: 3vh;
+}
+
 .step-text-container{
     text-align: left;
 }
@@ -20,4 +24,16 @@
 
 .content-paragraph{
     font-size: 2vh;
+}
+
+
+@media screen and (max-width: 1600px) {
+    .steps-layout{
+        display: block;
+        justify-content: space-around;
+    }
+
+    .step-container{
+        width: 25%;
+    }
 }
