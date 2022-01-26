@@ -13,14 +13,14 @@ function StepsElementsGenerator() {
             logo: first_number_logo,
             headingText: "Культивирование микроводорослей",
             contentSection: {
-                descriptionSection:[{
+                descriptionSection:{
                                     title: "Описание:",
                                     content: ["Выращивание сырья в биореакторах"]
                                     },
-                                    {
+                 developmentsSection:{
                                     title: "Наши наработки:",
                                     content: ["Модифицированная среда и методы воздействия", "Комбинация штаммов"]
-                                    }],
+                                    },
                 titleColor: "#FFFFFF",
                 contentColor: "#383832"  
             }
@@ -29,14 +29,14 @@ function StepsElementsGenerator() {
             logo: second_number_logo,
             headingText: "Кавитация микроводорослей",
             contentSection: {
-                descriptionSection:[{
+                descriptionSection:{
                                     title: "Описание:",
                                     content: ["Разрушение клеточной оболочки"]
                                     },
-                                    {
+                developmentsSection:{
                                     title: "Наши наработки:",
                                     content: ["Отказ от сепарации биомассы"]
-                                    }],
+                                    },
                 titleColor: "#383832",
                 contentColor: "#FFFFFF"    
             }
@@ -45,14 +45,14 @@ function StepsElementsGenerator() {
             logo: third_number_logo,
             headingText: "Сбраживание микроводорослей",
             contentSection: {
-                descriptionSection:[{
+                descriptionSection:{
                                     title: "Описание:",
                                     content: ["Сбраживание биомассы"]
                                     },
-                                    {
+                 developmentsSection:{
                                     title: "Наши наработки:",
                                     content: ["Модифицированная среда и методы воздействия", "Комбинация штаммов"]
-                                    }],
+                                    },
                 titleColor: "#FFFFFF",
                 contentColor: "#383832"  
             }
@@ -61,14 +61,14 @@ function StepsElementsGenerator() {
             logo: fourth_number_logo,
             headingText: "Ректификация раствора",
             contentSection: {
-                descriptionSection:[{
+                descriptionSection:{
                                     title: "Описание:",
                                     content: ["Разделение исходной браги на растворители"]
                                     },
-                                    {
+                developmentsSection:{
                                     title: "Наши наработки:",
                                     content: ["Ректификационная колонна с отводом твердой побочной продукции"]
-                                    }],
+                },
                 titleColor: "#383832",
                 contentColor: "#FFFFFF"  
             }
@@ -78,31 +78,34 @@ function StepsElementsGenerator() {
 
     function StepContentElementGenerator(sectionsArray) {
         var contentElementGenerator = [];
-        for(var sectionIndex = 0; sectionIndex < sectionsArray.descriptionSection.length; sectionIndex++) {
- 
-            contentElementGenerator.push(
-            <h3 className="section-content-header" style={{color: sectionsArray.titleColor}}>
-                {sectionsArray.descriptionSection[sectionIndex].title}</h3>);
-            if (sectionsArray.descriptionSection[sectionIndex].content.length > 1){
-                var sectionsElementsList = [];
-                for(var contentIndex = 0;
-                     contentIndex < sectionsArray.descriptionSection[sectionIndex].content.length;
-                      contentIndex++){
-                        sectionsElementsList.push(
-                            <li>
-                                <p className="content-paragraph"  style={{color: sectionsArray.contentColor}}>
-                                    {sectionsArray.descriptionSection[sectionIndex].content[contentIndex]}</p>
-                            </li>
-                        );
-                     }
-                contentElementGenerator.push(<ul>{sectionsElementsList}</ul>);
-            }
-            else{
-                contentElementGenerator.push(<p className="content-paragraph"  style={{color: sectionsArray.contentColor}}>
-                    {sectionsArray.descriptionSection[sectionIndex].content[0]}</p>);
-                }
+        contentElementGenerator.push(
+            <div className="">
+                <h3 className="section-content-header" style={{color: sectionsArray.titleColor}}>
+                    {sectionsArray.descriptionSection.title}
+                </h3>
+                <p className="content-paragraph"  style={{color: sectionsArray.contentColor}}>
+                    {sectionsArray.descriptionSection.content}
+                </p>
+            </div>
+        );
+        var developmentsSection = [];
+        for (var developmentStepIndex = 0;
+             developmentStepIndex < sectionsArray.developmentsSection.content.length; developmentStepIndex++) {
+            developmentsSection.push(
+                <li>
+                    <p className="content-paragraph" style={{color: sectionsArray.contentColor}}>
+                        {sectionsArray.developmentsSection.content[developmentStepIndex]}
+                    </p>
+                </li>)
         }
-        
+        contentElementGenerator.push(
+            <div className="">
+                <h3 className="section-content-header" style={{color: sectionsArray.titleColor}}>
+                    {sectionsArray.developmentsSection.title}
+                </h3>
+                <ul>{developmentsSection}</ul>
+            </div>
+        );
         return contentElementGenerator;
     }
 
@@ -114,7 +117,7 @@ function StepsElementsGenerator() {
             <div className="step-container">
                 <img src={stepsData[stepIndex].logo} className="step-logo" alt="step-logo"></img>
                 <div className="step-text-container">
-                    <h3 className="header-session">
+                    <h3 className="header-session" style={{color: stepsData[stepIndex].contentSection.contentColor}}>
                         {stepsData[stepIndex].headingText}
                     </h3>
                     <div>
